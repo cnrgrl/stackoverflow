@@ -1,18 +1,18 @@
 <div class="container">
   <div class="form-container">
     <div class="title">Hesap olustur</div>
-    <form>
+    <form [formGroup]="createUserForm">
       <mat-form-field appearance="outline">
         <mat-label>Emailinizi Giriniz</mat-label>
-        <input matInput />
+        <input matInput formControlName="email" />
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Kullanici adinizi Giriniz</mat-label>
-        <input matInput />
+        <input matInput formControlName="userName" />
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Şifrenizi Giriniz</mat-label>
-        <input type="password" matInput />
+        <input type="password" matInput formControlName="password" />
       </mat-form-field>
     </form>
     <div class="buttons-container">
@@ -20,5 +20,6 @@
       <p>Veya</p>
       <button mat-button routerLink="/login">Giriş Yap</button>
     </div>
+    {{ createUserForm.value | json }}
   </div>
 </div>
