@@ -1,9 +1,13 @@
 <div class="container">
   <div class="form-container">
-    <div class="title">Giriş</div>
+    <div class="title">Hesap olustur</div>
     <form>
       <mat-form-field appearance="outline">
         <mat-label>Emailinizi Giriniz</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Kullanici adinizi Giriniz</mat-label>
         <input matInput />
       </mat-form-field>
       <mat-form-field appearance="outline">
@@ -12,9 +16,9 @@
       </mat-form-field>
     </form>
     <div class="buttons-container">
-      <button mat-raised-button class="login-button">Giriş Yap</button>
+      <button mat-raised-button class="login-button">Kaydol</button>
       <p>Veya</p>
-      <button mat-button routerLink="/createuser">Hesap Oluştur</button>
+      <button mat-button routerLink="/login">Giriş Yap</button>
     </div>
   </div>
 </div>

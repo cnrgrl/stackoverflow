@@ -10,8 +10,9 @@ import { HearderComponent } from './hearder/hearder.component';
 import { LoginComponent } from './login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { CreateUserComponent } from './create-user/create-user.component';
 @NgModule({
-  declarations: [AppComponent, HearderComponent, LoginComponent],
+  declarations: [AppComponent, HearderComponent, LoginComponent, CreateUserComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
