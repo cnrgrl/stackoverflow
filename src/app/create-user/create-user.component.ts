@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-user',
@@ -18,4 +18,8 @@ export class CreateUserComponent implements OnInit {
     ],
     password: ['', [Validators.required, Validators.minLength(8)]],
   });
+
+  get f(): { [key: string]: AbstractControl } {
+    return this.createUserForm.controls;
+  }
 }
