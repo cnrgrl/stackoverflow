@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { BaseService } from './services/base.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [BaseService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
