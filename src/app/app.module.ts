@@ -12,6 +12,7 @@ import { HearderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { BaseService } from './services/base.service';
 @NgModule({
@@ -32,6 +33,7 @@ import { BaseService } from './services/base.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatSnackBarModule,
   ],
   providers: [BaseService],
   bootstrap: [AppComponent],

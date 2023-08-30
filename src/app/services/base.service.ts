@@ -19,11 +19,9 @@ export class BaseService {
     });
   }
   getReq(url: any) {
-    // const token = this.getToken();
-    return this.http.post<any>(this.baseUrlUpdate(url), {
+    return this.http.get<any>(this.baseUrlUpdate(url), {
       headers: new HttpHeaders({
-        'Content-type': 'application/json; charset=utf-8',
-        //Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json; charset=utf-8',
         'Access-Control-Allow-Origin': this.baseUrlUpdate(url),
       }),
     });
