@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     public userService: UserService,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -31,6 +33,12 @@ export class LoginComponent implements OnInit {
       console.log(res);
       if (res?.length == 0) {
         this.snackbar.open('Böyle bir kullanici yok', 'Ok');
+      } else {
+        if (res[0].password === this.loginForm.value.password) {
+          this.router.navigateByUrl('/home');
+        } else {
+          this.snackbar.open('password yanlis', 'Ok');
+        }
       }
     });
   }

@@ -15,12 +15,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { BaseService } from './services/base.service';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
     HearderComponent,
     LoginComponent,
     CreateUserComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
