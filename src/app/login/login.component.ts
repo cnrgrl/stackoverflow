@@ -35,7 +35,9 @@ export class LoginComponent implements OnInit {
         this.snackbar.open('Böyle bir kullanici yok', 'Ok');
       } else {
         if (res[0].password === this.loginForm.value.password) {
+          this.userService.user = res[0];
           this.router.navigateByUrl('/home');
+          localStorage.setItem('user', JSON.stringify(res[0]));
         } else {
           this.snackbar.open('password yanlis', 'Ok');
         }
