@@ -6,10 +6,18 @@
         cdkTextareaAutosize
         cdkAutosizeMinRows="5"
         placeholder="Sorunuzu sorun..."
+        [(ngModel)]="question"
       ></textarea>
     </mat-form-field>
     <div class="new-post-actions-container">
-      <button mat-raised-button class="post-button">Sor</button>
+      <button
+        (click)="submitQuestion()"
+        mat-raised-button
+        [disabled]="!question.trim()"
+        class="post-button"
+      >
+        Sor
+      </button>
     </div>
 
     <mat-card class="question-card">

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -40,7 +40,7 @@ import { MatCardModule } from '@angular/material/card';
     MatSnackBarModule,
     MatCardModule,
   ],
-  providers: [BaseService],
+  providers: [BaseService, FormControl],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
