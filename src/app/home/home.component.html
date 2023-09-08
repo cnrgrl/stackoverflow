@@ -20,10 +20,10 @@
       </button>
     </div>
 
-    <mat-card class="question-card">
+    <mat-card *ngFor="let q of questionList" class="question-card">
       <mat-card-content>
-        <p class="username">Can Boz</p>
-        <p>Angular zor mu?</p>
+        <p class="username">{{ q.userName }}</p>
+        <p>{{ q.question }}</p>
       </mat-card-content>
     </mat-card>
   </div>

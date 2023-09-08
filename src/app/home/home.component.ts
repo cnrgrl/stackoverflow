@@ -16,8 +16,13 @@ export class HomeComponent implements OnInit {
   ) {}
 
   question: string = '';
+  questionList: Array<any> = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.questionService.getQuestions().subscribe((res) => {
+      this.questionList = res;
+    });
+  }
   submitQuestion(): void {
     this.questionService
       .createQuestion({
@@ -27,6 +32,7 @@ export class HomeComponent implements OnInit {
       })
       .subscribe((res) => {
         console.log(res);
+        this.questionList.push(this.question);
       });
   }
 }

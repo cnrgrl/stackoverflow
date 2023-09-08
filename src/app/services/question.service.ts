@@ -14,7 +14,7 @@ export class QuestionService extends BaseService {
   public createQuestion(questionsObj: any) {
     return this.postReq('/questions', questionsObj);
   }
-  public getUser(email: string) {
-    return this.getReq('/users?email=' + email);
+  public getQuestions() {
+    return this.getReq('/questions');
   }
 }
