@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.userService.getUser(this.loginForm.value.email).subscribe((res) => {
-      console.log(res);
       if (res?.length == 0) {
         this.snackbar.open('Böyle bir kullanici yok', 'Ok');
       } else {

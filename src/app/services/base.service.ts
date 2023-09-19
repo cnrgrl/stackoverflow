@@ -10,7 +10,7 @@ export class BaseService {
 
   postReq(url: any, data: any) {
     // const token = this.getToken();
-    return this.http.post<any>(this.baseUrl + url, data, {
+    return this.http.post<any>(this.baseUrlUpdate(url), data, {
       headers: new HttpHeaders({
         'Content-type': 'application/json; charset=utf-8',
         //Authorization: `Bearer ${token}`,
@@ -26,12 +26,10 @@ export class BaseService {
       }),
     });
   }
-  putReq(url: any) {
-    // const token = this.getToken();
-    return this.http.post<any>(this.baseUrlUpdate(url), {
+  putReq(url: any, data: any) {
+    return this.http.put<any>(this.baseUrlUpdate(url), data, {
       headers: new HttpHeaders({
-        'Content-type': 'application/json; charset=utf-8',
-        //Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json; charset=utf-8',
         'Access-Control-Allow-Origin': this.baseUrlUpdate(url),
       }),
     });

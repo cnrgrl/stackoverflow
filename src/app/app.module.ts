@@ -17,6 +17,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { BaseService } from './services/base.service';
 import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { SolutionsComponent } from './solutions/solutions.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { MatCardModule } from '@angular/material/card';
     LoginComponent,
     CreateUserComponent,
     HomeComponent,
+    SolutionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { MatCardModule } from '@angular/material/card';
     HttpClientModule,
     MatSnackBarModule,
     MatCardModule,
+    MatIconModule,
   ],
   providers: [BaseService, FormControl],
   bootstrap: [AppComponent],

@@ -12,9 +12,11 @@ export class UserService extends BaseService {
   }
 
   public createAccount(userObj: any) {
+    console.log(this.user);
     return this.postReq('/users', userObj);
   }
   public getUser(email: string) {
+    console.log(this.user);
     return this.getReq('/users?email=' + email);
   }
 }

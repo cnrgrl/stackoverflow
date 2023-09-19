@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { FormControl } from '@angular/forms';
 import { QuestionService } from '../services/question.service';
 
 @Component({
@@ -11,8 +10,7 @@ import { QuestionService } from '../services/question.service';
 export class HomeComponent implements OnInit {
   constructor(
     public questionService: QuestionService,
-    public userService: UserService,
-    private form: FormControl
+    public userService: UserService
   ) {}
 
   question: string = '';
@@ -32,7 +30,7 @@ export class HomeComponent implements OnInit {
       })
       .subscribe((res) => {
         console.log(res);
-        this.questionList.push(this.question);
+        this.questionList.push(res);
       });
   }
 }

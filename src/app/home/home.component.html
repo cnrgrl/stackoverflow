@@ -20,7 +20,11 @@
       </button>
     </div>
 
-    <mat-card *ngFor="let q of questionList" class="question-card">
+    <mat-card
+      *ngFor="let q of questionList"
+      [routerLink]="'/show-solutions/' + q.id"
+      class="question-card"
+    >
       <mat-card-content>
         <p class="username">{{ q.userName }}</p>
         <p>{{ q.question }}</p>

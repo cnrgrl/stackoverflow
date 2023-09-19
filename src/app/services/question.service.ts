@@ -17,4 +17,10 @@ export class QuestionService extends BaseService {
   public getQuestions() {
     return this.getReq('/questions');
   }
+  public getOneQuestions(id: string) {
+    return this.getReq('/questions/' + id);
+  }
+  public addSolution(solution: any) {
+    return this.putReq('/questions/' + solution.id, solution);
+  }
 }
