@@ -1,0 +1,65 @@
+<div class="container">
+  <div style="display: flex; align-items: center; margin-right: 50px">
+    <button mat-raised-button color="accent" [routerLink]="'/home/'">
+      Geri Dön
+    </button>
+  </div>
+  <div class="content-wrapper">
+    <div class="title-container">İstediğiniz soruya cevap verebilirsiniz</div>
+    <mat-card class="question-card">
+      <mat-card-content>
+        <div class="solution-container">
+          <div class="arrows-container">
+            <button mat-icon-button><mat-icon>expand_less</mat-icon></button>
+            <span class="increasedecrease">32</span>
+            <button mat-icon-button><mat-icon>expand_more</mat-icon></button>
+          </div>
+          <div class="data-container">
+            <p class="username">{{ questionObj.userName }}</p>
+            <p>{{ questionObj.question }}</p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card
+      class="question-card"
+      style="background-color: lightblue"
+      *ngFor="let sol of questionObj.solutions; let i = index"
+    >
+      <mat-card-content>
+        <div class="solution-container">
+          <div class="arrows-container">
+            <button mat-icon-button (click)="vote(i, 1)">
+              <mat-icon>expand_less</mat-icon>
+            </button>
+            <span class="increasedecrease">{{
+              sol.plus.length - sol.minus.length
+            }}</span>
+            <button mat-icon-button (click)="vote(i, -1)">
+              <mat-icon>expand_more</mat-icon>
+            </button>
+          </div>
+          <div class="data-container">
+            <p class="username">{{ sol.username }}</p>
+            <p>{{ sol.solution }}</p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-form-field appearance="fill">
+      <textarea
+        matInput
+        [(ngModel)]="solutionText"
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="5"
+        placeholder="Cevabınızı Girin..."
+      ></textarea>
+    </mat-form-field>
+    <div class="new-post-actions-container">
+      <button (click)="submitSolution()" mat-raised-button class="post-button">
+        Kaydet
+      </button>
+    </div>
+  </div>
+</div>
